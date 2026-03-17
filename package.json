@@ -4,7 +4,7 @@
   "description": "Image Processing API project",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --config . prettierrc 'src/**/*.js' --write",
+    "prettier": "prettier --config .prettierrc \"src/**/*\" --write",
     "test": "npm run build && npm run jasmine"
   },
   "repository": {
