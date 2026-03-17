@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --config .prettierrc \"src/**/*\" --write",
+    "lint": "ESLint",
     "jasmine": "jasmine",
     "build": "npx tsc",
     "test": "npm run build && npm run jasmine"
