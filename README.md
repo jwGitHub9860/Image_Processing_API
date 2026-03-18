@@ -87,7 +87,11 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 
 _Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
 
+“ESLint.” _npm_, 7 Mar. 2026, www.npmjs.com/package/eslint. Accessed 17 Mar. 2026.
+
 “Express Logo PNG Transparent.” _Freebie Supply_, freebiesupply.com/logos/express-logo/. Accessed 17 Mar. 2026. 
+
+“Getting Started with ESLint.” _ESLint_, eslint.org/docs/latest/use/getting-started. Accessed 17 Mar. 2026.
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 17 Mar. 2026.
 
