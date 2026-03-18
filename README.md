@@ -56,6 +56,51 @@ Feel free to attempt to create this project based on the overview and rubric spe
 
 Although not a requirement, we recommend using Git from the very beginning if you choose to build on your local environment or use the provided workspace. Make sure to commit often and to use well-formatted commit messages.
 
+## Creation Date
+
+> 3/15/2026
+
+## Languages and Tools
+
+**Express**
+
+<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img width="114" height="216" alt="express_logo" src="https://github.com/user-attachments/assets/922b7eb3-f9a5-45d8-add7-e73f07cff732" /> </a> 
+
+**Jasmine**
+
+<a href="https://jasmine.github.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg" alt="jasmine" width="40" height="40"/> </a>
+
+**JavaScript**
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+
+**Node.js**
+
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img width="59" height="49" alt="node_js_logo" src="https://github.com/user-attachments/assets/bc05c6f4-2ccb-41ab-a499-d0cdee52540f" /> </a>
+
+**TypeScript**
+
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
+
+## Credits
+###### References used while making project
+
+_Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
+
+“Express Logo PNG Transparent.” _Freebie Supply_, freebiesupply.com/logos/express-logo/. Accessed 17 Mar. 2026. 
+
+“GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 17 Mar. 2026.
+
+“MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 17 Mar. 2026.
+
+Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.” _freeCodeCamp.Org_, freeCodeCamp.org, 8 Dec. 2021, www.freecodecamp.org/news/how-to-write-a-good-readme-file/. Accessed 17 Mar. 2026.
+
+“Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
+
+“Udacity Git Commit Message Style Guide.” _Udacity Nanodegree Style Guide_, udacity.github.io/git-styleguide/. Accessed 15 Mar. 2026. 
+
+Udacity, et al. “Udacity/CD0292-Building-a-Server-Project-Starter: Final Project for Backend Development with Node.Js Created by Rachel Manning.” _GitHub_, Udacity, 2021, github.com/udacity/cd0292-building-a-server-project-starter. Accessed 15 Mar. 2026.
+
 ## License
 
 [License](LICENSE.txt)
