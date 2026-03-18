@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Image Processing API project",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "format": "prettier --config .prettierrc \"src/**/*\" --write",
     "lint": "npx eslint",
