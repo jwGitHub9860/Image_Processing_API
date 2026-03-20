@@ -1,4 +1,16 @@
-// keep as "index.ts" or Change NAME to "index.js" or "main.ts"
+import express from 'express';
 
-// TEMPORARY CODE
-console.log('Inside index.ts File');
+// Sets Up Server using Express
+const app = express();
+const port = 5000;
+
+// Creates "get endpoint" for API route
+app.get('/api', (req, res) => {
+  res.send('Using API Endpoint');
+});
+
+app.listen(port, () => {
+  console.log(`Listening to ${port}`);
+});
+
+export default app;
