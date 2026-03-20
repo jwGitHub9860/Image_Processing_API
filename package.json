@@ -6,6 +6,7 @@
   "scripts": {
     "format": "prettier --config .prettierrc \"src/**/*\" --write",
     "lint": "npx eslint",
+    "start": "nodemon src/index.ts",
     "jasmine": "jasmine",
     "build": "npx tsc",
     "test": "npm run build && npm run jasmine"

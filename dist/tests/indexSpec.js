@@ -21,7 +21,7 @@ const supertest_1 = __importDefault(require("supertest"));
 // Tells "supertest" What Endpoint Tests are Running On
 const request = (0, supertest_1.default)(index_1.default);
 // Test for API Endpoint (suite)
-describe("Test endpoint responses", () => {
+describe('Test endpoint responses', () => {
     // Endpoint Tests are ALWAYS Asynchronous
     it('gets API Endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
         // Creates Response that Awaits Super Test Request and Obtains Endpoint API
