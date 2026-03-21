@@ -87,6 +87,10 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 
 _Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
 
+“CLI.” _Prettier RSS_, prettier.io/docs/cli. Accessed 21 Mar. 2026.
+
+Du, Wenfang, and thorn0. “Prettier - How to Ignore Certain File Types in CLI File Patterns?” _Stack Overflow_, https://stackoverflow.com/#organization, 24 Feb. 2021, stackoverflow.com/questions/66299219/prettier-how-to-ignore-certain-file-types-in-cli-file-patterns. Accessed 21 Mar. 2026.
+
 “ESLint.” _npm_, 7 Mar. 2026, www.npmjs.com/package/eslint. Accessed 17 Mar. 2026.
 
 “Express Logo PNG Transparent.” _Freebie Supply_, freebiesupply.com/logos/express-logo/. Accessed 17 Mar. 2026. 
