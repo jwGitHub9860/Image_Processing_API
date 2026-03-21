@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+// Imports Routes from "routes" Folder
+const index_1 = __importDefault(require("./routes/index"));
 // Sets Up Server using Express
 const app = (0, express_1.default)();
 const port = 5000;
@@ -11,7 +13,11 @@ const port = 5000;
 app.get('/api', (req, res) => {
     res.send('Using API Endpoint');
 });
+// Connects ALL Routes with Endpoints to Server File
+app.use('/api', index_1.default);
+// Starts Express Server
 app.listen(port, () => {
     console.log(`Listening to ${port}`);
+    console.log(`server started at http://localhost:${port}`);
 });
 exports.default = app;
