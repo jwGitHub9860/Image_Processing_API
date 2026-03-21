@@ -4,7 +4,7 @@
   "description": "Image Processing API project",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --config .prettierrc \"src/**/*\" --write",
+    "format": "prettier --config .prettierrc \"src/**/*\" --write --ignore-unknown \"!**/*.{jpg}\"",
     "lint": "npx eslint",
     "start": "nodemon src/index.ts",
     "jasmine": "jasmine",
