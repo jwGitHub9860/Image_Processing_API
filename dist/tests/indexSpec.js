@@ -1,5 +1,5 @@
 "use strict";
-// Tests for "index.js" File
+// Holds Tests for "index.js" File & API Routes
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -13,13 +13,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Imports "app" Object FROM "index.ts" Fi
+// Imports "app" Object FROM "index.ts" File
 const index_1 = __importDefault(require("../index"));
+// Allows Access to Express Router
+const express_1 = __importDefault(require("express"));
+// Imports Route from "acceptFileParameters.ts" File
+const acceptFileParameters_1 = __importDefault(require("../routes/api/acceptFileParameters"));
+// Imports Route from "resizeImages.ts" File
+const resizeImages_1 = __importDefault(require("../routes/api/resizeImages"));
+// Imports Route from "servePreResizedImage.ts" File
+const servePreResizedImage_1 = __importDefault(require("../routes/api/servePreResizedImage"));
 // Imports Super Tests
 const supertest_1 = __importDefault(require("supertest"));
 // Runs Endpoint Tests on "app"
 // Tells "supertest" What Endpoint Tests are Running On
 const request = (0, supertest_1.default)(index_1.default);
+// Router Object for Creating Routes
+const routes = express_1.default.Router();
 // Test for API Endpoint (suite)
 describe('Test endpoint responses', () => {
     // Endpoint Tests are ALWAYS Asynchronous
@@ -31,3 +41,13 @@ describe('Test endpoint responses', () => {
         expect(response.status).toBe(200);
     }));
 });
+// Calls Router, Obtains Root Path, and Sends Response from Server of 'Main API Route'
+routes.get('/', (req, res) => {
+    res.send('Main API Route');
+});
+// Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
+routes.use('/acceptFileParameters', acceptFileParameters_1.default);
+routes.use('/resizeImages', resizeImages_1.default);
+routes.use('/servePreResizedImage', servePreResizedImage_1.default);
+// Exports Route & Imports it into Main File
+exports.default = routes;
