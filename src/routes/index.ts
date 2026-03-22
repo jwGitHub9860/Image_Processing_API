@@ -2,13 +2,13 @@
 import express from 'express';
 
 // Imports Route from "acceptFileParameters.ts" File
-import fileParameters from '../routes/api/acceptFileParameters';
+import fileParameters from './api/images/acceptFileParameters';
 
 // Imports Route from "resizeImages.ts" File
-import resizeImage from '../routes/api/resizeImages';
+import resizeImage from './api/images/resizeImages';
 
 // Imports Route from "servePreResizedImage.ts" File
-import preResizedImage from '../routes/api/servePreResizedImage';
+import preResizedImage from './api/images/servePreResizedImage';
 
 // Router Object for Creating Routes
 const routes = express.Router();

@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Allows Access to Express Router
 const express_1 = __importDefault(require("express"));
 // Imports Route from "acceptFileParameters.ts" File
-const acceptFileParameters_1 = __importDefault(require("../routes/api/acceptFileParameters"));
+const acceptFileParameters_1 = __importDefault(require("./api/images/acceptFileParameters"));
 // Imports Route from "resizeImages.ts" File
-const resizeImages_1 = __importDefault(require("../routes/api/resizeImages"));
+const resizeImages_1 = __importDefault(require("./api/images/resizeImages"));
 // Imports Route from "servePreResizedImage.ts" File
-const servePreResizedImage_1 = __importDefault(require("../routes/api/servePreResizedImage"));
+const servePreResizedImage_1 = __importDefault(require("./api/images/servePreResizedImage"));
 // Router Object for Creating Routes
 const routes = express_1.default.Router();
 // Calls Router, Obtains Root Path, and Sends Response from Server of 'Main API Route'
