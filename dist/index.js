@@ -10,7 +10,7 @@ const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
 const port = 5000;
 // Creates "get endpoint" for API route
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Using API Endpoint');
 });
 // Connects ALL Routes with Endpoints to Server File
