@@ -14,8 +14,16 @@ import preResizedImage from './api/images/servePreResizedImage';
 const routes = express.Router();
 
 // Calls Router, Obtains Root Path, and Sends Response from Server of 'Main API Route'
+// Links to Code that Connects ALL Routes with Endpoints to Server File in "index.ts" File in "src" Folder
 routes.get('/', (req, res) => {
   res.send('Main API Route');
+});
+
+// Creates "get endpoint" for "../api/images"
+routes.get('/images', (req, res) => {
+  res.send(
+    'The following error occured processing your image remedy and try again: Error: Input file is missing',
+  );
 });
 
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
