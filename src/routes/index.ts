@@ -27,9 +27,9 @@ routes.get('/images', (req, res) => {
 });
 
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
-routes.use('/acceptFileParameters', fileParameters);
-routes.use('/resizeImages', resizeImage);
-routes.use('/servePreResizedImage', preResizedImage);
+routes.use('/images/acceptFileParameters', fileParameters);
+routes.use('/images/resizeImages', resizeImage);
+routes.use('/images/servePreResizedImage', preResizedImage);
 
 // Exports Route & Imports it into Main File
 export default routes;
