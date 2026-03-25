@@ -1,7 +1,7 @@
 // Holds Tests for "index.js" File & API Routes
 
-// Imports "app" Object FROM "index.ts" File
-import app from '../index';
+// Imports "app" Object FROM "index.js" File
+import app from '../index.js';
 
 // Imports Super Tests
 import supertest from 'supertest';
