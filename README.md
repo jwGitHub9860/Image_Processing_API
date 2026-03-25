@@ -56,6 +56,21 @@ Feel free to attempt to create this project based on the overview and rubric spe
 
 Although not a requirement, we recommend using Git from the very beginning if you choose to build on your local environment or use the provided workspace. Make sure to commit often and to use well-formatted commit messages.
 
+## Challenges Faced During Project
+
+One challenge that was faced was running both commands shown below successfully without any errors and warnings:
+
+```
+npm test
+npm run lint
+```
+
+This challenge was overcome by renaming the **"eslint.config.js"** file to **"eslint.config.mjs"**. This was _Option 1_ of the solution given by _Ahmed L_ in _Knowledge, Udacity_.
+
+## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
+- Mayur R
+- Ahmed L
+
 ## Creation Date
 
 > 3/15/2026
