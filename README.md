@@ -122,6 +122,8 @@ alejandro, and Promise. “Conflicts between Eslint and Jasmine Files.” _Knowl
 
 _Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
 
+_ChatGPT_, chatgpt.com/. Accessed 23 Mar. 2026.
+
 “CLI.” _Prettier RSS_, prettier.io/docs/cli. Accessed 21 Mar. 2026.
 
 “Configuration Migration Guide.” _ESLint_, eslint.org/docs/latest/use/configure/migration-guide. Accessed 23 Mar. 2026.
