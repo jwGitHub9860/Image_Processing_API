@@ -75,7 +75,7 @@ This challenge was overcome by renaming the **"eslint.config.js"** file to **"es
 
 > 3/15/2026
 
-## Languages and Tools
+## Languages
 
 **Express**
 
@@ -96,6 +96,24 @@ This challenge was overcome by renaming the **"eslint.config.js"** file to **"es
 **TypeScript**
 
 <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
+
+
+## Tools
+
+**Visual Studio Code** - The application software where the project is edited.
+
+<p align="left"> <img width="43" height="46" alt="VSCode_logo" src="https://github.com/user-attachments/assets/0f8d15c4-276a-46ef-92cd-80a2f1958e76" /> </p>
+
+
+**GitHub Desktop** - The application software that gives access to the project from _GitHub_ and allows it to be edited in _Visual Studio Code_.
+
+<p align="left"> <img width="46" height="46" alt="GitHub_Desktop_logo" src="https://github.com/user-attachments/assets/bbd2a72d-0953-499e-ab28-e55b11171b83" /> </p>
+
+
+**ChatGPT** - The application software that answers specific questions of why project has specific problems or why project failed to achieve intended results.
+
+<p align="left"> <img width="49" height="42" alt="ChatGPT_logo" src="https://github.com/user-attachments/assets/34fd410d-3e92-4fc6-8dc7-1be521a8d2a6" /> </p>
+
 
 ## Credits
 ###### References used while making project
