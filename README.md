@@ -100,9 +100,13 @@ This challenge was overcome by renaming the **"eslint.config.js"** file to **"es
 ## Credits
 ###### References used while making project
 
+alejandro, and Promise. “Conflicts between Eslint and Jasmine Files.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/645790. Accessed 23 Mar. 2026.
+
 _Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
 
 “CLI.” _Prettier RSS_, prettier.io/docs/cli. Accessed 21 Mar. 2026.
+
+“Configuration Migration Guide.” _ESLint_, eslint.org/docs/latest/use/configure/migration-guide. Accessed 23 Mar. 2026.
 
 Du, Wenfang, and thorn0. “Prettier - How to Ignore Certain File Types in CLI File Patterns?” _Stack Overflow_, https://stackoverflow.com/#organization, 24 Feb. 2021, stackoverflow.com/questions/66299219/prettier-how-to-ignore-certain-file-types-in-cli-file-patterns. Accessed 21 Mar. 2026.
 
@@ -114,15 +118,25 @@ Du, Wenfang, and thorn0. “Prettier - How to Ignore Certain File Types in CLI F
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 17 Mar. 2026.
 
+Islam, and Dániel H. “Image Processing Project: Eslint Errors.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/641178. Accessed 23 Mar. 2026.
+
+islamCodehood. “Image-Processing-Api/.Eslintrc.” _GitHub_, 2021, github.com/islamCodehood/image-processing-api/blob/main/.eslintrc. Accessed 23 Mar. 2026.
+
+kellywoldseth. “imageAPI / .Eslintrc.Json.” _GitHub_, 2022, github.com/kellywoldseth/imageAPI/blob/master/.eslintrc.json. Accessed 23 Mar. 2026.
+
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 17 Mar. 2026.
 
 Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.” _freeCodeCamp.Org_, freeCodeCamp.org, 8 Dec. 2021, www.freecodecamp.org/news/how-to-write-a-good-readme-file/. Accessed 17 Mar. 2026.
+
+Pilafian, Pilaf T., et al. “Configure ESLint (Eslint.Config.Js) to Only Analyze TypeScript Files (*.Ts).” _Stack Overflow_, https://stackoverflow.com/#organization, 3 Aug. 2024, stackoverflow.com/questions/78827606/configure-eslint-eslint-config-js-to-only-analyze-typescript-files-ts. Accessed 23 Mar. 2026.
 
 “Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
 
 “Udacity Git Commit Message Style Guide.” _Udacity Nanodegree Style Guide_, udacity.github.io/git-styleguide/. Accessed 15 Mar. 2026. 
 
 Udacity, et al. “Udacity/CD0292-Building-a-Server-Project-Starter: Final Project for Backend Development with Node.Js Created by Rachel Manning.” _GitHub_, Udacity, 2021, github.com/udacity/cd0292-building-a-server-project-starter. Accessed 15 Mar. 2026.
+
+W, Kelly, and Mayur R. “Eslint, Jasmine, Dependencies in General - Question on Image API.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/831847. Accessed 19 Mar. 2026.
 
 ## License
 
