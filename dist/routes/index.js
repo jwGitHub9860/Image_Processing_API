@@ -20,7 +20,10 @@ routes.get('/', (req, res) => {
 });
 // Creates "get endpoint" for "../api/images"
 routes.get('/images', (req, res) => {
-    res.send('The following error occured processing your image remedy and try again: Error: Input file is missing');
+    // Displays Error Response with
+    return res
+        .status(404)
+        .send('The following error occured processing your image remedy and try again: Error: Input file is missing');
 });
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
 routes.use('/images/acceptFileParameters', acceptFileParameters_1.default);
