@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "target": "es2015",
-        "module": "commonjs",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "lib": ["ES6"],
         "allowJs": true,
         "outDir": "./dist",
@@ -12,5 +13,5 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
     },
-    "exclude": ["node_modules", "./dist", "spec", "eslint.config.js"]
+    "exclude": ["node_modules", "./dist", "spec", "eslint.config.mjs"]
 }
