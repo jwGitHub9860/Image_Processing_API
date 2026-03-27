@@ -1,10 +1,10 @@
 import express from 'express';
 
-const routes = express.Router();
+const fileParameters = express.Router();
 
 // TEMP: use as test for testing images with NEW PARAMETERS?
-routes.get('/', (req, res) => {
+fileParameters.get('/', (req, res) => {
   res.send('Accept File Parameters');
 });
 
-export default routes;
+export default fileParameters;

@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const routes = express_1.default.Router();
+const preResizedImage = express_1.default.Router();
 // TEMP: use as test for testing PRE-RESIZED images?
-routes.get('/', (req, res) => {
+preResizedImage.get('/', (req, res) => {
     res.send('Serve Pre-Resized Image');
 });
-exports.default = routes;
+exports.default = preResizedImage;

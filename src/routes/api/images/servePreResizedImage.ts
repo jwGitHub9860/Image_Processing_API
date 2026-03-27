@@ -1,10 +1,10 @@
 import express from 'express';
 
-const routes = express.Router();
+const preResizedImage = express.Router();
 
 // TEMP: use as test for testing PRE-RESIZED images?
-routes.get('/', (req, res) => {
+preResizedImage.get('/', (req, res) => {
   res.send('Serve Pre-Resized Image');
 });
 
-export default routes;
+export default preResizedImage;
