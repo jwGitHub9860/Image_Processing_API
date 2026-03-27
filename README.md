@@ -138,19 +138,27 @@ Du, Wenfang, and thorn0. “Prettier - How to Ignore Certain File Types in CLI F
 
 “GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 17 Mar. 2026.
 
+“Installation.” _sharp_, sharp.pixelplumbing.com/install/. Accessed 26 Mar. 2026.
+
 Islam, and Dániel H. “Image Processing Project: Eslint Errors.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/641178. Accessed 23 Mar. 2026.
 
 islamCodehood. “Image-Processing-Api/.Eslintrc.” _GitHub_, 2021, github.com/islamCodehood/image-processing-api/blob/main/.eslintrc. Accessed 23 Mar. 2026.
 
 kellywoldseth. “imageAPI / .Eslintrc.Json.” _GitHub_, 2022, github.com/kellywoldseth/imageAPI/blob/master/.eslintrc.json. Accessed 23 Mar. 2026.
 
+Khosla, Aayush. “NPM Sharp.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/node-js/npm-sharp/. Accessed 26 Mar. 2026.
+
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 17 Mar. 2026.
+
+“npm V10+.” _sharp_, sharp.pixelplumbing.com/install/#npm-v10. Accessed 26 Mar. 2026.
 
 Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.” _freeCodeCamp.Org_, freeCodeCamp.org, 8 Dec. 2021, www.freecodecamp.org/news/how-to-write-a-good-readme-file/. Accessed 17 Mar. 2026.
 
 Pilafian, Pilaf T., et al. “Configure ESLint (Eslint.Config.Js) to Only Analyze TypeScript Files (*.Ts).” _Stack Overflow_, https://stackoverflow.com/#organization, 3 Aug. 2024, stackoverflow.com/questions/78827606/configure-eslint-eslint-config-js-to-only-analyze-typescript-files-ts. Accessed 23 Mar. 2026.
 
 “Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
+
+“sharp.” _npm_, Oct. 2026, www.npmjs.com/package/sharp. Accessed 16 Mar. 2026.
 
 “Udacity Git Commit Message Style Guide.” _Udacity Nanodegree Style Guide_, udacity.github.io/git-styleguide/. Accessed 15 Mar. 2026. 
 
