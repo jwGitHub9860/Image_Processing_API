@@ -47,8 +47,10 @@ fileParameters.post('/upload', upload.single('file'), (req, res) => {
     if (!file) {
         return res.status(400).send({ message: 'Please select a File.' });
     }
-    // TEMP: Change to "http://localhost:5000/api/images/${file.filename}", Current URL is TEMPORARY
-    const url = `http://localhost:5000/api/images/upload/${file.filename}`;
+    // TEMP: Current URL is TEMPORARY
+    // TEMP: Leave as "http://localhost:5000/${file.filename}"?
+    // TEMP: Change to "http://localhost:5000/api/images/${file.filename}"?
+    const url = `http://localhost:5000/${file.filename}`;
     // Store File Path with Original Filename as Key
     db.set(file.filename, file.path);
     res.json({
@@ -64,7 +66,7 @@ const transformedDir = path.join(__dirname, 'transform-image');
 if (!fs.existsSync(transformedDir)) {
     fs.mkdirSync(transformedDir);
 }
-fileParameters.get('/:filename', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+fileParameters.get('/images/:filename', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const filename = req.params.filename;
     const { h, w, f, q } = req.query;
     const filePath = db.get(filename);
@@ -72,7 +74,8 @@ fileParameters.get('/:filename', (req, res) => __awaiter(void 0, void 0, void 0,
         return res.status(404).send({ message: 'File not found.' });
     }
     // Generate Unique Key for Processed Image Based on Parameters
-    const formateUrl = `http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`;
+    // TEMP: Change "formateUrl" Back to "http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"?
+    const formateUrl = `http://localhost:5000/api/images/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`;
     let editPath = processed.get(formateUrl);
     if (editPath) {
         // Serve Cached Processed Image if it Exists
@@ -144,6 +147,22 @@ function processImage(filePath, h, w, f, q) {
         }
     });
 }
+// Converts Raw, URL-encoded File Path into Query String
+fileParameters.get("/convert-image", (req, res) => {
+    var _a;
+    // Input String
+    const rawPath = "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg";
+    // Decode & Clean Path (%22 -> ", / -> \ if necessary)
+    // Result: C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg
+    const decodedPath = decodeURIComponent(rawPath).replace(/"/g, '');
+    // Extract Filename (Ex. encenadaport.jpg)
+    const filename = (_a = decodedPath.split('/').pop()) === null || _a === void 0 ? void 0 : _a.split('.').shift();
+    // Construct new Query String
+    const newQuery = `?filename=${filename}&width=100&height=100`;
+    // Send Result (or redirect)
+    // Output: ?filename=${filename}&width=100&height=100
+    res.send(newQuery);
+});
 /*const image_collection = [
   { name: "encenadaport", url: "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\encenadaport.jpg"},
   { name: "fjord", url: "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\fjord.jpg"}

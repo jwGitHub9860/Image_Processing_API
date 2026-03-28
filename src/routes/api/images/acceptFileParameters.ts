@@ -153,4 +153,24 @@ async function processImage(filePath: any, h: any, w: any, f: any, q: any) {
   }
 }
 
+// Converts Raw, URL-encoded File Path into Query String
+fileParameters.get("/convert-image", (req, res) => {
+  // Input String
+  const rawPath = "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg";
+
+  // Decode & Clean Path (%22 -> ", / -> \ if necessary)
+  // Result: C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg
+  const decodedPath = decodeURIComponent(rawPath).replace(/"/g, '');
+
+  // Extract Filename (Ex. encenadaport.jpg)
+  const filename = decodedPath.split('/').pop()?.split('.').shift();
+
+  // Construct new Query String
+  const newQuery = `?filename=${filename}&width=100&height=100`;
+
+  // Send Result (or redirect)
+  // Output: ?filename=${filename}&width=100&height=100
+  res.send(newQuery);
+})
+
 export default fileParameters;
