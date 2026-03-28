@@ -26,7 +26,7 @@ routes.get('/images', (req, res) => {
         .send('The following error occured processing your image remedy and try again: Error: Input file is missing');
 });
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
-routes.use('/images/acceptFileParameters', acceptFileParameters_1.default);
+routes.use('/images', acceptFileParameters_1.default);
 routes.use('/images/resizeImages', resizeImages_1.default);
 routes.use('/images/servePreResizedImage', servePreResizedImage_1.default);
 // Exports Route & Imports it into Main File
