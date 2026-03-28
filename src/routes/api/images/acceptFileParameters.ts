@@ -33,7 +33,7 @@ const upload = multer({ storage: storage });
 // File Upload Endpoint
 fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
   // MUST DEFINE "req" As "req: any"                  (^code above)
-  // Using Only "req, res" Will Create Error with "file" in "req.file"
+  // Using ONLY "req, res" Will Create Error with "file" in "req.file"
   const file = req.file;
   if (!file) {
     return res.status(400).send({ message: 'Please select a File.'});
@@ -47,6 +47,45 @@ fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
     message: 'File uploaded successfully.',
     url: url
   });
+});
+
+// In-memory Storage for File Paths
+const db = new Map();
+const processed = new Map();
+
+// Ensure Transform-Image Directory Exists
+const transformedDir = path.join(__dirname, 'transform-image');
+if (!fs.existsSync(transformedDir)) {
+  fs.mkdirSync(transformedDir)
+}
+
+fileParameters.get('/:filename', async (req, res) => {
+  const filename = req.params.filename;
+  const { h, w, f, q } = req.query;
+  const filePath = db.get(filename);
+  
+  if (!filePath) {
+    return res.status(404).send({ message: 'File not found.' });
+  }
+  
+  // Generate Unique Key for Processed Image Based on Parameters
+  const formateUrl = `http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`
+  let editPath = processed.get(formateUrl);
+
+  if (editPath) {
+    // Serve Cached Processed Image if it Exists
+    return res.sendFile(path.resolve(editPath));
+  } else if (h || w || f || q) {
+    // Process Image if Resizing or Format/Quality Adjustments are Specified
+    editPath = await processImage(filePath, h, w, f, q);
+    if (editPath) {
+      processed.set(formateUrl, editPath);
+      return res.sendFile(path.resolve(editPath))
+    }
+  }
+
+  // Serve Original File if No Processing is Required
+  res.sendFile(path.resolve(filePath));
 });
 
 export default fileParameters;
