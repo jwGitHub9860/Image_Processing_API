@@ -30,10 +30,23 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// TEMP: use as test for testing images with NEW PARAMETERS?
-// TEMP: use Either "/" OR "/acceptFileParameters"
-fileParameters.get('/', (req, res) => {
-  res.send('Accept File Parameters');
+// File Upload Endpoint
+fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
+  // MUST DEFINE "req" As "req: any"                  (^code above)
+  // Using Only "req, res" Will Create Error with "file" in "req.file"
+  const file = req.file;
+  if (!file) {
+    return res.status(400).send({ message: 'Please select a File.'});
+  }
+  const url = `http://localhost:5000/${file.filename}`
+
+  // Store File Path with Original Filename as Key
+  db.set(file.filename, file.path)
+
+  res.json({
+    message: 'File uploaded successfully.',
+    url: url
+  });
 });
 
 export default fileParameters;
