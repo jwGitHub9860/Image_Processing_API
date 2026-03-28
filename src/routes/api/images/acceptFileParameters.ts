@@ -88,4 +88,63 @@ fileParameters.get('/:filename', async (req, res) => {
   res.sendFile(path.resolve(filePath));
 });
 
+// TEMP: Keep "filePath" as "string" or "any"
+// MUST USE "filePath: any, h: any, w: any, f: any, q: any"
+// Using UNDEFINED "h, w, f, q" Will Causes Errors
+async function processImage(filePath: any, h: any, w: any, f: any, q: any) {
+  try {
+    const transformer = sharp(filePath);
+
+    // Apply Resizing Only if "h" or "w" is Provided
+    // MUST DEFINE "resizeOptions" as "any"
+    // Using Undefined "resizeOptions" Will Create Error with "resizeOptions.height" & "resizeOptions.width"
+    const resizeOptions: any = {};
+    resizeOptions.height = h ? parseInt(h) : undefined;
+    resizeOptions.width = w ? parseInt(w) : undefined;
+    if (Object.keys(resizeOptions).length > 0) {
+      transformer.resize(resizeOptions)
+    }
+
+    // Apply Format Conversion if "f" is Provided & Supported
+    switch (true && f.toLowerCase()) {
+      case "jpeg":
+        break
+      case "jpg":
+        transformer.jpeg({ quality: q ? parseInt(q) : 80 });
+        break
+      case "png":
+        transformer.png({ quality: q ? parseInt(q) : 80 });
+        break
+      case "webp":
+        transformer.webp({ quality: q ? parseInt(q) : 80 });
+        break
+      case "gif":
+        // GIF Format Doesn't Support Quality Adjustment
+        transformer.gif();
+        break;
+      case "tiff":
+        transformer.tiff({ quality: q ? parseInt(q) : 80 });
+        break
+      case "avif":
+        transformer.avif({ quality: q ? parseInt(q) : 80 });
+        break;
+      default:
+        throw new Error("Unsupported format");
+        break;
+    }
+
+    // Save Processed File to "transform-image" Directory
+    const extension = f ? `.${f}` : path.extname(filePath)
+    const processedFilePath = path.join(
+      transformedDir,
+      `processed-${Date.now()}${extension}`
+    );
+    await transformer.toFile(processedFilePath)
+    return processedFilePath;
+  } catch (error) {
+    console.error('Error processing image:', error)
+    return null
+  }
+}
+
 export default fileParameters;
