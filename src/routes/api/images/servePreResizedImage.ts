@@ -5,6 +5,7 @@ import express from 'express';
 const preResizedImage = express.Router();
 
 // TEMP: use as test for testing PRE-RESIZED images?
+// TEMP: use Either "/" OR "/servePreResizedImage"
 preResizedImage.get('/', (req, res) => {
   res.send('Serve Pre-Resized Image');
 });
