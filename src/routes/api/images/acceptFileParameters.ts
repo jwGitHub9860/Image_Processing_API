@@ -39,8 +39,11 @@ fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
   if (!file) {
     return res.status(400).send({ message: 'Please select a File.'});
   }
-  // TEMP: Change to "http://localhost:5000/api/images/${file.filename}", Current URL is TEMPORARY
-  const url = `http://localhost:5000/api/images/upload/${file.filename}`
+
+  // TEMP: Current URL is TEMPORARY
+  // TEMP: Leave as "http://localhost:5000/${file.filename}"?
+  // TEMP: Change to "http://localhost:5000/api/images/${file.filename}"?
+  const url = `http://localhost:5000/${file.filename}`
 
   // Store File Path with Original Filename as Key
   db.set(file.filename, file.path)
@@ -61,7 +64,7 @@ if (!fs.existsSync(transformedDir)) {
   fs.mkdirSync(transformedDir)
 }
 
-fileParameters.get('/:filename', async (req, res) => {
+fileParameters.get('/images/:filename', async (req, res) => {
   const filename = req.params.filename;
   const { h, w, f, q } = req.query;
   const filePath = db.get(filename);
@@ -71,7 +74,8 @@ fileParameters.get('/:filename', async (req, res) => {
   }
   
   // Generate Unique Key for Processed Image Based on Parameters
-  const formateUrl = `http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`
+  // TEMP: Change "formateUrl" Back to "http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"?
+  const formateUrl = `http://localhost:5000/api/images/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`
   let editPath = processed.get(formateUrl);
 
   if (editPath) {
