@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const preResizedImage = express_1.default.Router();
 // TEMP: use as test for testing PRE-RESIZED images?
+// TEMP: use Either "/" OR "/servePreResizedImage"
 preResizedImage.get('/', (req, res) => {
     res.send('Serve Pre-Resized Image');
 });

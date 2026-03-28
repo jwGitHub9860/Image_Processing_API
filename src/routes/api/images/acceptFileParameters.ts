@@ -31,6 +31,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // File Upload Endpoint
+// TEMP: Change "/upload" to "/", Current "/" is TEMPORARY
 fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
   // MUST DEFINE "req" As "req: any"                  (^code above)
   // Using ONLY "req, res" Will Create Error with "file" in "req.file"
@@ -38,7 +39,8 @@ fileParameters.post('/upload', upload.single('file'), (req: any, res) => {
   if (!file) {
     return res.status(400).send({ message: 'Please select a File.'});
   }
-  const url = `http://localhost:5000/${file.filename}`
+  // TEMP: Change to "http://localhost:5000/api/images/${file.filename}", Current URL is TEMPORARY
+  const url = `http://localhost:5000/api/images/upload/${file.filename}`
 
   // Store File Path with Original Filename as Key
   db.set(file.filename, file.path)
