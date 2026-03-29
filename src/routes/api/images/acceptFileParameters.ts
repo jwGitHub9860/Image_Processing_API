@@ -81,7 +81,9 @@ fileParameters.get('/images', async (req, res) => {
   const w = req.query.w as string;
   const f = req.query.f as string;
   const q = req.query.q as string;
-  res.send(req.query);
+
+  // Sends Response IMMEDIATELY & Exits
+  //res.send(req.query);
 
   // TEMP: used to be "!filePath"
   if (!filename) {
