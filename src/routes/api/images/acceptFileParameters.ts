@@ -4,8 +4,13 @@ import express from 'express';
 const cors = require("cors")
 const multer = require("multer")
 const path = require("path")
-const sharp = require("path")
+const sharp = require("sharp")
 const fs = require("fs");
+
+const originalImagesDir = path.join(
+  __dirname,
+  "original-images"
+);
 
 const fileParameters = express.Router();
 
@@ -64,13 +69,24 @@ if (!fs.existsSync(transformedDir)) {
   fs.mkdirSync(transformedDir)
 }
 
-fileParameters.get('/images/:filename', async (req, res) => {
-  const filename = req.params.filename;
-  const { h, w, f, q } = req.query;
-  const filePath = db.get(filename);
+// TEMP: Used to be "/images/:filename"
+fileParameters.get('/images', async (req, res) => {
+  // TEMP: did Not have "as string"
+  //const filename = req.params.filename as string;
+  const { filename, h, w, f, q } = req.query;
   
-  if (!filePath) {
+  // TEMP: used to be "!filePath"
+  if (!filename) {
     return res.status(404).send({ message: 'File not found.' });
+  }
+
+  // TEMP: used to be "const filePath = db.get(filename)"
+  // TEMP: used to be ABOVE "const { filename, h, w, f, q } = req.query"
+  const filePath = path.join(originalImagesDir, filename as string);
+
+  // TEMP: was not Originally here
+  if (fs.existsSync(filePath)) {
+    return res.status(404).send({ message: "File not found" });
   }
   
   // Generate Unique Key for Processed Image Based on Parameters
@@ -152,25 +168,5 @@ async function processImage(filePath: any, h: any, w: any, f: any, q: any) {
     return null
   }
 }
-
-// Converts Raw, URL-encoded File Path into Query String
-fileParameters.get("/convert-image", (req, res) => {
-  // Input String
-  const rawPath = "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg";
-
-  // Decode & Clean Path (%22 -> ", / -> \ if necessary)
-  // Result: C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg
-  const decodedPath = decodeURIComponent(rawPath).replace(/"/g, '');
-
-  // Extract Filename (Ex. encenadaport.jpg)
-  const filename = decodedPath.split('/').pop()?.split('.').shift();
-
-  // Construct new Query String
-  const newQuery = `?filename=${filename}&width=100&height=100`;
-
-  // Send Result (or redirect)
-  // Output: ?filename=${filename}&width=100&height=100
-  res.send(newQuery);
-})
 
 export default fileParameters;

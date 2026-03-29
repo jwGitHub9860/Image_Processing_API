@@ -17,8 +17,9 @@ const express_1 = __importDefault(require("express"));
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
-const sharp = require("path");
+const sharp = require("sharp");
 const fs = require("fs");
+const originalImagesDir = path.join(__dirname, "original-images");
 const fileParameters = express_1.default.Router();
 // Middleware for CORS and JSON parsing
 fileParameters.use(cors());
@@ -66,12 +67,21 @@ const transformedDir = path.join(__dirname, 'transform-image');
 if (!fs.existsSync(transformedDir)) {
     fs.mkdirSync(transformedDir);
 }
-fileParameters.get('/images/:filename', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const filename = req.params.filename;
-    const { h, w, f, q } = req.query;
-    const filePath = db.get(filename);
-    if (!filePath) {
+// TEMP: Used to be "/images/:filename"
+fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // TEMP: did Not have "as string"
+    //const filename = req.params.filename as string;
+    const { filename, h, w, f, q } = req.query;
+    // TEMP: used to be "!filePath"
+    if (!filename) {
         return res.status(404).send({ message: 'File not found.' });
+    }
+    // TEMP: used to be "const filePath = db.get(filename)"
+    // TEMP: used to be ABOVE "const { filename, h, w, f, q } = req.query"
+    const filePath = path.join(originalImagesDir, filename);
+    // TEMP: was not Originally here
+    if (fs.existsSync(filePath)) {
+        return res.status(404).send({ message: "File not found" });
     }
     // Generate Unique Key for Processed Image Based on Parameters
     // TEMP: Change "formateUrl" Back to "http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"?
@@ -147,69 +157,4 @@ function processImage(filePath, h, w, f, q) {
         }
     });
 }
-// Converts Raw, URL-encoded File Path into Query String
-fileParameters.get("/convert-image", (req, res) => {
-    var _a;
-    // Input String
-    const rawPath = "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg";
-    // Decode & Clean Path (%22 -> ", / -> \ if necessary)
-    // Result: C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\original-images\encenadaport.jpg
-    const decodedPath = decodeURIComponent(rawPath).replace(/"/g, '');
-    // Extract Filename (Ex. encenadaport.jpg)
-    const filename = (_a = decodedPath.split('/').pop()) === null || _a === void 0 ? void 0 : _a.split('.').shift();
-    // Construct new Query String
-    const newQuery = `?filename=${filename}&width=100&height=100`;
-    // Send Result (or redirect)
-    // Output: ?filename=${filename}&width=100&height=100
-    res.send(newQuery);
-});
-/*const image_collection = [
-  { name: "encenadaport", url: "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\encenadaport.jpg"},
-  { name: "fjord", url: "C:\Users\jwori\GitHub\Image_Processing_API\src\routes\api\images\fjord.jpg"}
-]
-
-fileParameters.get('/:name', async (req, res) => {
-  res.send('Accept File Parameters');
-  let {file} = req.query;
-  console.log("file: " + file);
-  const queryTeam = req.query.query
-  const category = req.query.category
-  console.log("req.route.path: " + req.route.path);
-  res.send(`Search Query: ${queryTeam}, Category: ${category}`);
-});*/
-/*fileParameters.get("/search", (req, res) => {
-  const queryTeam = req.query.query;
-  const category = req.query.category;
-
-  res.send(`Search Query: ${queryTeam}, Category: ${category}`);
-})*/
-/*import sharp from "sharp";
-
-const importImages = './images';   // note the removal of the trailing '/'
-//const exportImages = './uploads';
-
-fileParameters.get('/test', (req, res) => {    // note the suggested change in route name
-  // note that res.send() moved to become the last promise in the chain
-  const fileIn = `${importImages}/${req.query.filename}`;
-  //const fileOut = `${exportImages}/${req.query.filename}`;
-  // note the construction of a complete input and output file specs
-  const params = {
-    width: req.query.width,
-    height: req.query.height,
-    fit: 'contain',
-    background: { r: 255, g: 0, b: 0, alpha: 0.5 }
-  };
-  console.log(params);
-  // return sharp(fileIn)
-  //   .resize(params).toBuffer().then(data => {
-  //     fs.writeFile(fileOut, data);
-  //   }).then(() => {
-  //     return res.send('done');
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //     return res.status(400).send(err);
-  //   });
-});*/
-//let myImage = new Image()
 exports.default = fileParameters;
