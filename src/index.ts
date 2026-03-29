@@ -9,7 +9,9 @@ const port = 5000;
 
 // Creates "get endpoint" for API route
 app.get('/', (req, res) => {
-  res.send('Using API Endpoint');
+  res.send(
+    'Welcome to Image API Endpoint, please enter \"http://localhost:3000/api/\" into URL to view instructions.',
+  );
 });
 
 // Connects ALL Routes with Endpoints to Server File

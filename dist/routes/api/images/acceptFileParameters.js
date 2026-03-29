@@ -39,14 +39,6 @@ const storage = multer.diskStorage({
     },
 });
 const upload = multer({ storage: storage });
-// TEMP: used to be inside "index.ts" File in "routes" Folder
-// Creates "get endpoint" for "../api/images"
-fileParameters.get('/images', (req, res) => {
-    // Displays Error Response, HTTP Status Code 404 (not found)
-    return res
-        .status(404)
-        .send('The following error occured processing your image remedy and try again: Error: Input file is missing');
-});
 // File Upload Endpoint
 // TEMP: Change "/upload" to "/", Current "/" is TEMPORARY
 fileParameters.post('/upload', upload.single('file'), (req, res) => {
