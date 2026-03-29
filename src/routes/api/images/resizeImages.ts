@@ -1,8 +1,8 @@
 // TEMP: Keep or MOVE Entire File into "index.ts" FILE in "routes" FOLDER?
 
 import express from 'express';
-const path = require("path")
-const sharp = require("sharp")
+const path = require('path');
+const sharp = require('sharp');
 
 const resizeImage = express.Router();
 
@@ -14,31 +14,23 @@ resizeImage.get('/', (req, res) => {
 
 // TEMP: ChatGPT test
 // Image Registry
-const imagesDir = path.join(
-  __dirname,
-  "images",
-  "original-images"
-);
+const imagesDir = path.join(__dirname, 'images', 'original-images');
 
 const imageRegistry = {
-    encenadaport: path.join(imagesDir, "encenadaport.jpg"),
-    fjord: path.join(imagesDir, "fjord.jpg"),
-    icelandwaterfall: path.join(imagesDir, "icelandwaterfall.jpg"),
-    palmtunnel: path.join(imagesDir, "palmtunnel.jpg"),
-    santamonica: path.join(imagesDir, "santamonica.jpg")
-}
+  encenadaport: path.join(imagesDir, 'encenadaport.jpg'),
+  fjord: path.join(imagesDir, 'fjord.jpg'),
+  icelandwaterfall: path.join(imagesDir, 'icelandwaterfall.jpg'),
+  palmtunnel: path.join(imagesDir, 'palmtunnel.jpg'),
+  santamonica: path.join(imagesDir, 'santamonica.jpg'),
+};
 
 // Helper Function for Defining Image Path
-function buildImageQuery(
-  filename: string,
-  width = 100,
-  height = 100
-) {
+function buildImageQuery(filename: string, width = 100, height = 100) {
   return `?filename=${filename}&width=${width}&height=${height}`;
 }
 
-const query = buildImageQuery("encenadaport")
-console.log(query)
+const query = buildImageQuery('encenadaport');
+console.log(query);
 
 // TEMP: Keep "filePath" as "string" or "any"
 // MUST USE "filePath: any, h: any, w: any"
@@ -54,7 +46,7 @@ async function processImage(filePath: any, h: any, w: any) {
     resizeOptions.height = h ? parseInt(h) : undefined;
     resizeOptions.width = w ? parseInt(w) : undefined;
     if (Object.keys(resizeOptions).length > 0) {
-      transformer.resize(resizeOptions)
+      transformer.resize(resizeOptions);
     }
 
     // Save Processed File to "transform-image" Directory
@@ -66,8 +58,8 @@ async function processImage(filePath: any, h: any, w: any) {
     // await transformer.toFile(processedFilePath)
     // return processedFilePath;
   } catch (error) {
-    console.error('Error processing image:', error)
-    return null
+    console.error('Error processing image:', error);
+    return null;
   }
 }
 

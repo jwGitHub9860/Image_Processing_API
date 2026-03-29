@@ -10,6 +10,11 @@ const preResizedImage = express_1.default.Router();
 // TEMP: use Either "/" OR "/servePreResizedImage"
 preResizedImage.get('/', (req, res) => {
     res.send('Serve Pre-Resized Image');
+    // Extract Query Parameters
+    // const { filename, width, height } = req.query;
+    // console.log("filename: " + filename, "width: " + width, "height: " + height);
+    // res.send(`Processing ${filename} at ${width}x${height}`);
+    // console.log("req.query: " + req.query)
 });
 // temp: SUCCESSFUL
 // Converts Raw, URL-encoded File Path into Query String
