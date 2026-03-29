@@ -14,12 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cors = require("cors");
-const multer = require("multer");
-const path = require("path");
-const sharp = require("sharp");
-const fs = require("fs");
-const originalImagesDir = path.join(__dirname, "original-images");
+const cors = require('cors');
+const multer = require('multer');
+const path = require('path');
+const sharp = require('sharp');
+const fs = require('fs');
+const originalImagesDir = path.join(__dirname, 'original-images');
 const fileParameters = express_1.default.Router();
 // Middleware for CORS and JSON parsing
 fileParameters.use(cors());
@@ -31,12 +31,12 @@ const storage = multer.diskStorage({
     // Using ONLY "req", "file", & "cb" will Cause Errors
     destination: function (req, file, cb) {
         // Ensure "original-images" Directory Exists
-        cb(null, "original-images");
+        cb(null, 'original-images');
     },
     filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1E9);
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
-    }
+    },
 });
 const upload = multer({ storage: storage });
 // File Upload Endpoint
@@ -56,7 +56,7 @@ fileParameters.post('/upload', upload.single('file'), (req, res) => {
     db.set(file.filename, file.path);
     res.json({
         message: 'File uploaded successfully.',
-        url: url
+        url: url,
     });
 });
 // In-memory Storage for File Paths
@@ -71,21 +71,32 @@ if (!fs.existsSync(transformedDir)) {
 fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // TEMP: did Not have "as string"
     //const filename = req.params.filename as string;
-    const { filename, h, w, f, q } = req.query;
+    // TEMP: used to be "const { filename, h, w, f, q } = req.query"
+    // Cleaner SAFER version, Better than "const { filename, h, w, f, q } = req.query"
+    const filename = req.query.filename;
+    const h = req.query.h;
+    const w = req.query.w;
+    const f = req.query.f;
+    const q = req.query.q;
+    res.send(req.query);
     // TEMP: used to be "!filePath"
     if (!filename) {
-        return res.status(404).send({ message: 'File not found.' });
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Input file is missing');
     }
     // TEMP: used to be "const filePath = db.get(filename)"
     // TEMP: used to be ABOVE "const { filename, h, w, f, q } = req.query"
     const filePath = path.join(originalImagesDir, filename);
     // TEMP: was not Originally here
-    if (fs.existsSync(filePath)) {
-        return res.status(404).send({ message: "File not found" });
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).send({ message: 'File not found' });
     }
     // Generate Unique Key for Processed Image Based on Parameters
     // TEMP: Change "formateUrl" Back to "http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"?
-    const formateUrl = `http://localhost:5000/api/images/${filename}?h=${h}&w=${w}&f=${f}&q=${q}`;
+    // TEMP: Used to be "http://localhost:5000/api/images/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"
+    const formateUrl = `http://localhost:5000/api/images?filename=${filename}&h=${h}&w=${w}&f=${f}&q=${q}`;
     let editPath = processed.get(formateUrl);
     if (editPath) {
         // Serve Cached Processed Image if it Exists
@@ -119,31 +130,33 @@ function processImage(filePath, h, w, f, q) {
                 transformer.resize(resizeOptions);
             }
             // Apply Format Conversion if "f" is Provided & Supported
-            switch (true && f.toLowerCase()) {
-                case "jpeg":
-                    break;
-                case "jpg":
-                    transformer.jpeg({ quality: q ? parseInt(q) : 80 });
-                    break;
-                case "png":
-                    transformer.png({ quality: q ? parseInt(q) : 80 });
-                    break;
-                case "webp":
-                    transformer.webp({ quality: q ? parseInt(q) : 80 });
-                    break;
-                case "gif":
-                    // GIF Format Doesn't Support Quality Adjustment
-                    transformer.gif();
-                    break;
-                case "tiff":
-                    transformer.tiff({ quality: q ? parseInt(q) : 80 });
-                    break;
-                case "avif":
-                    transformer.avif({ quality: q ? parseInt(q) : 80 });
-                    break;
-                default:
-                    throw new Error("Unsupported format");
-                    break;
+            if (f) {
+                switch (f.toLowerCase()) {
+                    case 'jpeg':
+                        break;
+                    case 'jpg':
+                        transformer.jpeg({ quality: q ? parseInt(q) : 80 });
+                        break;
+                    case 'png':
+                        transformer.png({ quality: q ? parseInt(q) : 80 });
+                        break;
+                    case 'webp':
+                        transformer.webp({ quality: q ? parseInt(q) : 80 });
+                        break;
+                    case 'gif':
+                        // GIF Format Doesn't Support Quality Adjustment
+                        transformer.gif();
+                        break;
+                    case 'tiff':
+                        transformer.tiff({ quality: q ? parseInt(q) : 80 });
+                        break;
+                    case 'avif':
+                        transformer.avif({ quality: q ? parseInt(q) : 80 });
+                        break;
+                    default:
+                        throw new Error('Unsupported format');
+                        break;
+                }
             }
             // Save Processed File to "transform-image" Directory
             const extension = f ? `.${f}` : path.extname(filePath);

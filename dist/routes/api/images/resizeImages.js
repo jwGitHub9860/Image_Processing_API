@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const path = require("path");
-const sharp = require("sharp");
+const path = require('path');
+const sharp = require('sharp');
 const resizeImage = express_1.default.Router();
 // TEMP: use as test for testing RESIZED images?
 // TEMP: use Either "/" OR "/resizeImages"
@@ -24,19 +24,19 @@ resizeImage.get('/', (req, res) => {
 });
 // TEMP: ChatGPT test
 // Image Registry
-const imagesDir = path.join(__dirname, "images", "original-images");
+const imagesDir = path.join(__dirname, 'images', 'original-images');
 const imageRegistry = {
-    encenadaport: path.join(imagesDir, "encenadaport.jpg"),
-    fjord: path.join(imagesDir, "fjord.jpg"),
-    icelandwaterfall: path.join(imagesDir, "icelandwaterfall.jpg"),
-    palmtunnel: path.join(imagesDir, "palmtunnel.jpg"),
-    santamonica: path.join(imagesDir, "santamonica.jpg")
+    encenadaport: path.join(imagesDir, 'encenadaport.jpg'),
+    fjord: path.join(imagesDir, 'fjord.jpg'),
+    icelandwaterfall: path.join(imagesDir, 'icelandwaterfall.jpg'),
+    palmtunnel: path.join(imagesDir, 'palmtunnel.jpg'),
+    santamonica: path.join(imagesDir, 'santamonica.jpg'),
 };
 // Helper Function for Defining Image Path
 function buildImageQuery(filename, width = 100, height = 100) {
     return `?filename=${filename}&width=${width}&height=${height}`;
 }
-const query = buildImageQuery("encenadaport");
+const query = buildImageQuery('encenadaport');
 console.log(query);
 // TEMP: Keep "filePath" as "string" or "any"
 // MUST USE "filePath: any, h: any, w: any"
