@@ -13,12 +13,31 @@ const request = supertest(app);
 // Test for API Endpoint (suite)
 describe('Test endpoint responses', () => {
   // Endpoint Tests are ALWAYS Asynchronous
-  it('gets API Endpoint', async () => {
+  it('Home API Endpoint', async () => {
+    // Creates Response that Awaits Super Test Request and Obtains Endpoint API
+    const response = await request.get('/');
+
+    // Returns Status 200 when Accessed in Browser
+    // Expect Statement that Checks if Response Status is 200 (HTTP Status Code for "okay", Test Passes)
+    expect(response.status).toBe(200);
+  });
+
+  it('Instructions API Endpoint', async () => {
     // Creates Response that Awaits Super Test Request and Obtains Endpoint API
     const response = await request.get('/api');
 
     // Returns Status 200 when Accessed in Browser
     // Expect Statement that Checks if Response Status is 200 (HTTP Status Code for "okay", Test Passes)
     expect(response.status).toBe(200);
+  });
+
+  it('Images API Endpoint', async () => {
+    // Creates Response that Awaits Super Test Request and Obtains Endpoint API
+    const response = await request.get('/api/images');
+
+    // Returns Status 404 when Accessed in Browser
+    // Expect Statement that Checks if Response Status is 404 (HTTP Status Code for "not found")
+    // SUPPOSE TO Return HTTP Status Code 404 (not found) Because Query Needs to be Present
+    expect(response.status).toBe(404);
   });
 });
