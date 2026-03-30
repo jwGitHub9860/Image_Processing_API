@@ -18,15 +18,6 @@ const routes = express_1.default.Router();
 routes.get('/', (req, res) => {
     res.send('Please enter URL similar to the following example: "http://localhost:5000/api/images?filename=encenadaport&width=200&height=200". The available image filenames are the following: "encenadaport.jpg", "fjord.jpg", "icelandwaterfall.jpg", "palmtunnel.jpg", and "santamonica.jpg".');
 });
-// Creates "get endpoint" for "../api/images"
-/*routes.get('/images', (req, res) => {
-  // Displays Error Response, HTTP Status Code 404 (not found)
-  return res
-    .status(404)
-    .send(
-      'The following error occured processing your image remedy and try again: Error: Input file is missing',
-    );
-});*/
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
 routes.use('/', acceptFileParameters_1.default);
 routes.use('/images/resizeImages', resizeImages_1.default);

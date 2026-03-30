@@ -71,26 +71,40 @@ if (!fs.existsSync(transformedDir)) {
 fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // TEMP: did Not have "as string"
     //const filename = req.params.filename as string;
-    // TEMP: used to be "const { filename, h, w, f, q } = req.query"
+    // "res.send(req.query)" Sends Response IMMEDIATELY & Exits
     // Cleaner SAFER version, Better than "const { filename, h, w, f, q } = req.query"
     const filename = req.query.filename;
     const h = req.query.h;
     const w = req.query.w;
     const f = req.query.f;
     const q = req.query.q;
-    // Sends Response IMMEDIATELY & Exits
-    //res.send(req.query);
-    // TEMP: used to be "!filePath"
-    if (!filename) {
+    // Checks if "filename", "h", "w", or All File Parameters are Present
+    if (!filename && !h && !w) {
         // Displays Error Response, HTTP Status Code 404 (not found)
         return res
             .status(404)
             .send('The following error occured processing your image remedy and try again: Error: Input file is missing');
     }
-    // TEMP: used to be "const filePath = db.get(filename)"
-    // TEMP: used to be ABOVE "const { filename, h, w, f, q } = req.query"
+    else if (!filename) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image filename is missing');
+    }
+    else if (!h) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image height is missing');
+    }
+    else if (!w) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image width is missing');
+    }
     const filePath = path.join(originalImagesDir, filename);
-    // TEMP: was not Originally here
+    // Checks if File ALREADY EXISTS
     if (!fs.existsSync(filePath)) {
         return res.status(404).send({ message: 'File not found' });
     }

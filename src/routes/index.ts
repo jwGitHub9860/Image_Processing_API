@@ -21,16 +21,6 @@ routes.get('/', (req, res) => {
   );
 });
 
-// Creates "get endpoint" for "../api/images"
-/*routes.get('/images', (req, res) => {
-  // Displays Error Response, HTTP Status Code 404 (not found)
-  return res
-    .status(404)
-    .send(
-      'The following error occured processing your image remedy and try again: Error: Input file is missing',
-    );
-});*/
-
 // Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
 routes.use('/', fileParameters);
 routes.use('/images/resizeImages', resizeImage);
