@@ -4,12 +4,6 @@ import express from 'express';
 // Imports Route from "acceptFileParameters.ts" File
 import fileParameters from './api/images/acceptFileParameters';
 
-// Imports Route from "resizeImages.ts" File
-import resizeImage from './api/images/resizeImages';
-
-// Imports Route from "servePreResizedImage.ts" File
-import preResizedImage from './api/images/servePreResizedImage';
-
 // Router Object for Creating Routes
 const routes = express.Router();
 
@@ -21,10 +15,8 @@ routes.get('/', (req, res) => {
   );
 });
 
-// Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
+// Enables Use of "fileParameters" Routes
 routes.use('/', fileParameters);
-routes.use('/images/resizeImages', resizeImage);
-routes.use('/images/servePreResizedImage', preResizedImage);
 
 // Exports Route & Imports it into Main File
 export default routes;

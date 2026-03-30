@@ -7,10 +7,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 // Imports Route from "acceptFileParameters.ts" File
 const acceptFileParameters_1 = __importDefault(require("./api/images/acceptFileParameters"));
-// Imports Route from "resizeImages.ts" File
-const resizeImages_1 = __importDefault(require("./api/images/resizeImages"));
-// Imports Route from "servePreResizedImage.ts" File
-const servePreResizedImage_1 = __importDefault(require("./api/images/servePreResizedImage"));
 // Router Object for Creating Routes
 const routes = express_1.default.Router();
 // Calls Router, Obtains Root Path, and Sends Response from Server of 'Main API Route'
@@ -18,9 +14,7 @@ const routes = express_1.default.Router();
 routes.get('/', (req, res) => {
     res.send('Please enter URL similar to the following example: "http://localhost:5000/api/images?filename=encenadaport&width=200&height=200". The available image filenames are the following: "encenadaport.jpg", "fjord.jpg", "icelandwaterfall.jpg", "palmtunnel.jpg", and "santamonica.jpg".');
 });
-// Enable Use of "fileParameters", "resizeImage", and "preResizedImage" Routes
+// Enables Use of "fileParameters" Routes
 routes.use('/', acceptFileParameters_1.default);
-routes.use('/images/resizeImages', resizeImages_1.default);
-routes.use('/images/servePreResizedImage', servePreResizedImage_1.default);
 // Exports Route & Imports it into Main File
 exports.default = routes;
