@@ -56,6 +56,119 @@ Feel free to attempt to create this project based on the overview and rubric spe
 
 Although not a requirement, we recommend using Git from the very beginning if you choose to build on your local environment or use the provided workspace. Make sure to commit often and to use well-formatted commit messages.
 
+## Challenges Faced During Project
+
+One challenge that was faced was running both commands shown below successfully without any errors and warnings:
+
+```
+npm test
+npm run lint
+```
+
+This challenge was overcome by renaming the **"eslint.config.js"** file to **"eslint.config.mjs"**. This was _Option 1_ of the solution given by _Ahmed L_ in _Knowledge, Udacity_.
+
+## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
+- Mayur R
+- Ahmed L
+- Oscar
+
+## Creation Date
+
+> 3/15/2026
+
+## Languages
+
+**Express**
+
+<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img width="114" height="216" alt="express_logo" src="https://github.com/user-attachments/assets/922b7eb3-f9a5-45d8-add7-e73f07cff732" /> </a> 
+
+**Jasmine**
+
+<a href="https://jasmine.github.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg" alt="jasmine" width="40" height="40"/> </a>
+
+**JavaScript**
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
+
+**Node.js**
+
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img width="59" height="49" alt="node_js_logo" src="https://github.com/user-attachments/assets/bc05c6f4-2ccb-41ab-a499-d0cdee52540f" /> </a>
+
+**TypeScript**
+
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
+
+
+## Tools
+
+**Visual Studio Code** - The application software where the project is edited.
+
+<p align="left"> <img width="43" height="46" alt="VSCode_logo" src="https://github.com/user-attachments/assets/0f8d15c4-276a-46ef-92cd-80a2f1958e76" /> </p>
+
+
+**GitHub Desktop** - The application software that gives access to the project from _GitHub_ and allows it to be edited in _Visual Studio Code_.
+
+<p align="left"> <img width="46" height="46" alt="GitHub_Desktop_logo" src="https://github.com/user-attachments/assets/bbd2a72d-0953-499e-ab28-e55b11171b83" /> </p>
+
+
+**ChatGPT** - The application software that answers specific questions of why project has specific problems or why project failed to achieve intended results.
+
+<p align="left"> <img width="49" height="42" alt="ChatGPT_logo" src="https://github.com/user-attachments/assets/34fd410d-3e92-4fc6-8dc7-1be521a8d2a6" /> </p>
+
+
+## Credits
+###### References used while making project
+
+alejandro, and Promise. “Conflicts between Eslint and Jasmine Files.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/645790. Accessed 23 Mar. 2026.
+
+_Brand Guide_, nodejs.org/static/documents/foundation-visual-guidelines.pdf. Accessed 17 Mar. 2026.
+
+_ChatGPT_, chatgpt.com/. Accessed 23 Mar. 2026.
+
+“CLI.” _Prettier RSS_, prettier.io/docs/cli. Accessed 21 Mar. 2026.
+
+“Configuration Migration Guide.” _ESLint_, eslint.org/docs/latest/use/configure/migration-guide. Accessed 23 Mar. 2026.
+
+Du, Wenfang, and thorn0. “Prettier - How to Ignore Certain File Types in CLI File Patterns?” _Stack Overflow_, https://stackoverflow.com/#organization, 24 Feb. 2021, stackoverflow.com/questions/66299219/prettier-how-to-ignore-certain-file-types-in-cli-file-patterns. Accessed 21 Mar. 2026.
+
+“ESLint.” _npm_, 7 Mar. 2026, www.npmjs.com/package/eslint. Accessed 17 Mar. 2026.
+
+“Express Logo PNG Transparent.” _Freebie Supply_, freebiesupply.com/logos/express-logo/. Accessed 17 Mar. 2026. 
+
+“Getting Started with ESLint.” _ESLint_, eslint.org/docs/latest/use/getting-started. Accessed 17 Mar. 2026.
+
+“GitHub Profile README Generator.” _GitHub Profile Readme Generator | GitHub Profile Readme Generator_, rahuldkjain.github.io/gh-profile-readme-generator/. Accessed 17 Mar. 2026.
+
+“Installation.” _sharp_, sharp.pixelplumbing.com/install/. Accessed 26 Mar. 2026.
+
+Islam, and Dániel H. “Image Processing Project: Eslint Errors.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/641178. Accessed 23 Mar. 2026.
+
+islamCodehood. “Image-Processing-Api/.Eslintrc.” _GitHub_, 2021, github.com/islamCodehood/image-processing-api/blob/main/.eslintrc. Accessed 23 Mar. 2026.
+
+kellywoldseth. “imageAPI / .Eslintrc.Json.” _GitHub_, 2022, github.com/kellywoldseth/imageAPI/blob/master/.eslintrc.json. Accessed 23 Mar. 2026.
+
+Khosla, Aayush. “NPM Sharp.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/node-js/npm-sharp/. Accessed 26 Mar. 2026.
+
+“MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 17 Mar. 2026.
+
+“npm V10+.” _sharp_, sharp.pixelplumbing.com/install/#npm-v10. Accessed 26 Mar. 2026.
+
+Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.” _freeCodeCamp.Org_, freeCodeCamp.org, 8 Dec. 2021, www.freecodecamp.org/news/how-to-write-a-good-readme-file/. Accessed 17 Mar. 2026.
+
+Pilafian, Pilaf T., et al. “Configure ESLint (Eslint.Config.Js) to Only Analyze TypeScript Files (*.Ts).” _Stack Overflow_, https://stackoverflow.com/#organization, 3 Aug. 2024, stackoverflow.com/questions/78827606/configure-eslint-eslint-config-js-to-only-analyze-typescript-files-ts. Accessed 23 Mar. 2026.
+
+“Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
+
+sahil. “Building an Express Web App for File Uploads and Dynamic Image Processing on the Fly.” DEV Community, DEV Community, 6 Nov. 2024, dev.to/itxsahil/building-an-express-web-app-for-file-uploads-and-dynamic-image-processing-on-the-fly-1k0l#:~:text=When%20you%20access%20any%20of%20the%20URLs,the%20server%20will%20process%20the%20image%20accordingly. Accessed 27 Mar. 2026.
+
+“sharp.” _npm_, Oct. 2026, www.npmjs.com/package/sharp. Accessed 16 Mar. 2026.
+
+“Udacity Git Commit Message Style Guide.” _Udacity Nanodegree Style Guide_, udacity.github.io/git-styleguide/. Accessed 15 Mar. 2026. 
+
+Udacity, et al. “Udacity/CD0292-Building-a-Server-Project-Starter: Final Project for Backend Development with Node.Js Created by Rachel Manning.” _GitHub_, Udacity, 2021, github.com/udacity/cd0292-building-a-server-project-starter. Accessed 15 Mar. 2026.
+
+W, Kelly, and Mayur R. “Eslint, Jasmine, Dependencies in General - Question on Image API.” _Knowledge_, Udacity, 2022, knowledge.udacity.com/questions/831847. Accessed 19 Mar. 2026.
+
 ## License
 
 [License](LICENSE.txt)
