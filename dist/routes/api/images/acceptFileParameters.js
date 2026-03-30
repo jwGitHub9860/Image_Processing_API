@@ -1,5 +1,4 @@
 "use strict";
-// TEMP: Keep or MOVE Entire File into "index.ts" FILE in "routes" FOLDER?
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,7 +39,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 // File Upload Endpoint
-// TEMP: Change "/upload" to "/", Current "/" is TEMPORARY
 fileParameters.post('/upload', upload.single('file'), (req, res) => {
     // MUST DEFINE "req" As "req: any"                  (^code above)
     // Using ONLY "req, res" Will Create Error with "file" in "req.file"
@@ -48,9 +46,6 @@ fileParameters.post('/upload', upload.single('file'), (req, res) => {
     if (!file) {
         return res.status(400).send({ message: 'Please select a File.' });
     }
-    // TEMP: Current URL is TEMPORARY
-    // TEMP: Leave as "http://localhost:5000/${file.filename}"?
-    // TEMP: Change to "http://localhost:5000/api/images/${file.filename}"?
     const url = `http://localhost:5000/${file.filename}`;
     // Store File Path with Original Filename as Key
     db.set(file.filename, file.path);
@@ -67,10 +62,7 @@ const transformedDir = path.join(__dirname, 'transform-image');
 if (!fs.existsSync(transformedDir)) {
     fs.mkdirSync(transformedDir);
 }
-// TEMP: Used to be "/images/:filename"
 fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // TEMP: did Not have "as string"
-    //const filename = req.params.filename as string;
     // "res.send(req.query)" Sends Response IMMEDIATELY & Exits
     // Cleaner SAFER version, Better than "const { filename, h, w, f, q } = req.query"
     const filename = req.query.filename;
@@ -78,7 +70,7 @@ fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, fu
     const w = req.query.w;
     const f = req.query.f;
     const q = req.query.q;
-    // Checks if "filename", "h", "w", or All File Parameters are Present
+    // Checks if Image Filename, Height, and Width are All Present
     if (!filename && !h && !w) {
         // Displays Error Response, HTTP Status Code 404 (not found)
         return res
@@ -103,14 +95,30 @@ fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, fu
             .status(404)
             .send('The following error occured processing your image remedy and try again: Error: Image width is missing');
     }
+    else if (!filename && !h) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image filename and height are missing');
+    }
+    else if (!filename && !w) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image filename and width are missing');
+    }
+    else if (!h && !w) {
+        // Displays Error Response, HTTP Status Code 404 (not found)
+        return res
+            .status(404)
+            .send('The following error occured processing your image remedy and try again: Error: Image height and width are missing');
+    }
     const filePath = path.join(originalImagesDir, filename);
     // Checks if File ALREADY EXISTS
     if (!fs.existsSync(filePath)) {
         return res.status(404).send({ message: 'File not found' });
     }
     // Generate Unique Key for Processed Image Based on Parameters
-    // TEMP: Change "formateUrl" Back to "http://localhost:5000/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"?
-    // TEMP: Used to be "http://localhost:5000/api/images/${filename}?h=${h}&w=${w}&f=${f}&q=${q}"
     const formateUrl = `http://localhost:5000/api/images?filename=${filename}&h=${h}&w=${w}&f=${f}&q=${q}`;
     let editPath = processed.get(formateUrl);
     if (editPath) {
@@ -128,7 +136,6 @@ fileParameters.get('/images', (req, res) => __awaiter(void 0, void 0, void 0, fu
     // Serve Original File if No Processing is Required
     res.sendFile(path.resolve(filePath));
 }));
-// TEMP: Keep "filePath" as "string" or "any"
 // MUST USE "filePath: any, h: any, w: any, f: any, q: any"
 // Using UNDEFINED "h, w, f, q" Will Causes Errors
 function processImage(filePath, h, w, f, q) {
