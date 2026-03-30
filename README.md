@@ -149,6 +149,8 @@ kellywoldseth. “imageAPI / .Eslintrc.Json.” _GitHub_, 2022, github.com/kelly
 
 Khosla, Aayush. “NPM Sharp.” _GeeksforGeeks_, GeeksforGeeks, 23 July 2025, www.geeksforgeeks.org/node-js/npm-sharp/. Accessed 26 Mar. 2026.
 
+“Make a README.” _GitHub_, GitHub, www.makeareadme.com/. Accessed 30 Mar. 2026.
+
 “MLA Works Cited: Electronic Sources (Web Publications).” _MLA Works Cited: Electronic Sources - Purdue OWL® - Purdue University_, owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_works_cited_electronic_sources.html. Accessed 17 Mar. 2026.
 
 “npm V10+.” _sharp_, sharp.pixelplumbing.com/install/#npm-v10. Accessed 26 Mar. 2026.
@@ -157,11 +159,15 @@ Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.�
 
 Pilafian, Pilaf T., et al. “Configure ESLint (Eslint.Config.Js) to Only Analyze TypeScript Files (*.Ts).” _Stack Overflow_, https://stackoverflow.com/#organization, 3 Aug. 2024, stackoverflow.com/questions/78827606/configure-eslint-eslint-config-js-to-only-analyze-typescript-files-ts. Accessed 23 Mar. 2026.
 
+“READMEs.” _styleguide_, google.github.io/styleguide/docguide/READMEs.html#:~:text=About%20README.md%20files.,%2Ddate%20README.md%20file. Accessed 30 Mar. 2026.
+
 “Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
 
 sahil. “Building an Express Web App for File Uploads and Dynamic Image Processing on the Fly.” DEV Community, DEV Community, 6 Nov. 2024, dev.to/itxsahil/building-an-express-web-app-for-file-uploads-and-dynamic-image-processing-on-the-fly-1k0l#:~:text=When%20you%20access%20any%20of%20the%20URLs,the%20server%20will%20process%20the%20image%20accordingly. Accessed 27 Mar. 2026.
 
 “sharp.” _npm_, Oct. 2026, www.npmjs.com/package/sharp. Accessed 16 Mar. 2026.
+
+Srivastava, Abhishek. “Guide to Writing on Readme.Md (.Markdown)File for GitHub Project.” _Medium_, 16 Nov. 2022, abhiappmobiledeveloper.medium.com/guide-to-writing-on-readme-md-markdown-file-for-github-project-8aad4e4e2a15. Accessed 30 Mar. 2026.
 
 “Udacity Git Commit Message Style Guide.” _Udacity Nanodegree Style Guide_, udacity.github.io/git-styleguide/. Accessed 15 Mar. 2026. 
 
