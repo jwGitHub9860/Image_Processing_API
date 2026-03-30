@@ -8,6 +8,10 @@ For this project, refactor and test as much as possible while you are building. 
 
 > 3/15/2026
 
+## Project Status
+
+> Active
+
 ## Getting Started
 
 Usually, you would get some starter code to build from, but with this project, it’s your job to prove you can do it from scratch, so all that is being provided for you is a folder of license-free stock images you are welcome to use. If you would like to use your own images for this project, you are welcome to do so, but whoever reviews your project will see your images, and when you display your project online, viewers will also see them.
