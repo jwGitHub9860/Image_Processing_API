@@ -70,6 +70,7 @@ This challenge was overcome by renaming the **"eslint.config.js"** file to **"es
 ## Udacity Mentors Who Have Answered Questions In Knowledge To Help With Project
 - Mayur R
 - Ahmed L
+- Oscar
 
 ## Creation Date
 
@@ -157,6 +158,8 @@ Nyakundi, Hillary. “How to Write a Good README File for Your GitHub Project.�
 Pilafian, Pilaf T., et al. “Configure ESLint (Eslint.Config.Js) to Only Analyze TypeScript Files (*.Ts).” _Stack Overflow_, https://stackoverflow.com/#organization, 3 Aug. 2024, stackoverflow.com/questions/78827606/configure-eslint-eslint-config-js-to-only-analyze-typescript-files-ts. Accessed 23 Mar. 2026.
 
 “Routing.” _express_, expressjs.com/en/guide/routing.html. Accessed 16 Mar. 2026.
+
+sahil. “Building an Express Web App for File Uploads and Dynamic Image Processing on the Fly.” DEV Community, DEV Community, 6 Nov. 2024, dev.to/itxsahil/building-an-express-web-app-for-file-uploads-and-dynamic-image-processing-on-the-fly-1k0l#:~:text=When%20you%20access%20any%20of%20the%20URLs,the%20server%20will%20process%20the%20image%20accordingly. Accessed 27 Mar. 2026.
 
 “sharp.” _npm_, Oct. 2026, www.npmjs.com/package/sharp. Accessed 16 Mar. 2026.
 
