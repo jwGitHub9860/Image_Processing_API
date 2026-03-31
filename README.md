@@ -60,6 +60,28 @@ Feel free to attempt to create this project based on the overview and rubric spe
    If everything else has gone well, you should be able to compile your typescript and start up your production server to test that everything still works as expected. Make sure you've provided all necessary information in your readme file, so your reviewer knows how to test your API. If everything works and your documentation is complete, you're ready to submit!
    **_Congratulations!_**
 
+## Working Endpoint URL examples
+
+The URL below will take the user to the home page.
+```
+http://localhost:5000/
+```
+
+The URL below will take the user to a different page that displays a list of the available images.
+```
+http://localhost:5000/api
+```
+
+The URL below will display the image of **encenadaport** with a _width_ of _200_ and a _height_ of _200_.
+```
+http://localhost:5000/api/images?filename=encenadaport.jpg&w=200&h=200
+```
+
+The URL below will display the image of **encenadaport** with a _width_ of _110_ and a _height_ of _110_.
+```
+http://localhost:5000/api/images?filename=encenadaport.jpg&w=110&h=110
+```
+
 ## Version Control
 
 Although not a requirement, we recommend using Git from the very beginning if you choose to build on your local environment or use the provided workspace. Make sure to commit often and to use well-formatted commit messages.
