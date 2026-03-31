@@ -10,7 +10,7 @@ For this project, refactor and test as much as possible while you are building. 
 
 ## Project Status
 
-> Active
+> Complete
 
 ## Getting Started
 
