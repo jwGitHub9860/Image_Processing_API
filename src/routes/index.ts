@@ -11,7 +11,7 @@ const routes = express.Router();
 // Links to Code that Connects ALL Routes with Endpoints to Server File in "index.ts" File in "src" Folder
 routes.get('/', (req, res) => {
   res.send(
-    'Please enter URL similar to the following example: "http://localhost:5000/api/images?filename=encenadaport&width=200&height=200". The available image filenames are the following: "encenadaport.jpg", "fjord.jpg", "icelandwaterfall.jpg", "palmtunnel.jpg", and "santamonica.jpg".',
+    'The available image filenames are the following: "encenadaport.jpg", "fjord.jpg", "icelandwaterfall.jpg", "palmtunnel.jpg", and "santamonica.jpg".',
   );
 });
 
